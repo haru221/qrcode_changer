@@ -1,0 +1,10 @@
+{
+  "name": "qrcode_changer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "pug": "^2.0.4",
+    "qrcode": "^1.4.4"
+  }
+}
