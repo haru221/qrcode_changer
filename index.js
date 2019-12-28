@@ -9,7 +9,7 @@ server.on('error', (err) => {
 }).on('clientError', (err) => {
   console.error('Client Error', err);
 });
-const port = 8000;
+const port = process.env.PORT || 8000;
 server.listen(port, () => {
   console.info(`Listening on ${port}`);
 });

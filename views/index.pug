@@ -13,7 +13,7 @@ html(lang="ja")
     crossorigin="anonymous")
 
   body.container
-    i(class="fas fa-qrcode fa-3x").my-3   QRコードの変換するURLを入力してください。
+    i(class="fas fa-qrcode fa-3x").my-5   QRコードに変換するURLを入力してください。
     form(action="/qrcode_changer", method="post")
       div.form-group
         textarea(name="input_url", rows="2" placeholder="ここにURLを入力してください").form-control
@@ -21,8 +21,10 @@ html(lang="ja")
         button(type="submit").btn.btn-primary 変換する
     - var isRequested = data ? true : false
     if isRequested
-      h1.mt-5 生成したQRコード
-      img(src=data, alt="qrcode")
+      div.form-group
+        h1.mt-5 生成したQRコード
+      div.form-group
+        img(src=data, alt="qrcode")
     if isNotUrl
       i(class="fas fa-exclamation-triangle fa-3x" style="color:red;").mt-5 URLではありません。
     if isError
