@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "cookies": "0.5.1",
     "pug": "^2.0.4",
     "qrcode": "^1.4.4"
   },
