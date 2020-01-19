@@ -2,7 +2,7 @@ doctype html
 html(lang="ja")
   head
     meta(charset="UTF-8")
-    title QRコード変換
+    title URL2QR
 
     link(rel="stylesheet",
     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
@@ -11,9 +11,10 @@ html(lang="ja")
     link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
     crossorigin="anonymous")
+    link(rel="stylesheet" href="css/style.css" type="text/css")
 
-  body.container
-    i(class="fas fa-qrcode fa-3x").my-5   QRコードに変換するURLを入力してください。
+  body(class="back").container
+    i(class="fas fa-qrcode fa-3x").my-5  QRコードに変換するURLを入力してください。
     form(action="/qrcode_changer", method="post")
       div.form-group
         textarea(name="input_url", rows="2" placeholder="ここにURLを入力してください").form-control
@@ -22,13 +23,13 @@ html(lang="ja")
     - var isRequested = data ? true : false
     if isRequested
       div.form-group
-        h1.mt-5 生成したQRコード
+        h1(class="result").mt-5 ↓生成したQRコード
       div.form-group
         img(src=data, alt="qrcode")
     if isNotUrl
-      i(class="fas fa-exclamation-triangle fa-3x" style="color:red;").mt-5 URLではありません。
+      i(class="fas fa-exclamation-triangle fa-3x").mt-5 URLではありません。
     if isError
-      i(class="fas fa-exclamation-triangle fa-3x" style="color:red;").mt-5 変換時にエラーが発生しました。
+      i(class="fas fa-exclamation-triangle fa-3x").mt-5 変換時にエラーが発生しました。
 
     script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js",

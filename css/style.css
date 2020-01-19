@@ -1,0 +1,26 @@
+body {
+  padding: 10px;
+  background-color: mistyrose;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.back {
+  background-color: #85DB18;
+  background-image: linear-gradient(#CDE855 50%, transparent 50%, transparent);
+  background-size: 30px 30px;
+}
+
+.fa-qrcode {
+  color: tomato;
+  text-shadow: 1px 2px 3px #808080;
+}
+
+.result {
+  color: green;
+  text-shadow: 1px 2px 3px #808080;
+}
+
+.fa-exclamation-triangle {
+  color: red;
+  text-shadow: 1px 2px 3px #808080;
+}
