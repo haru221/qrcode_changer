@@ -11,25 +11,22 @@ html(lang="ja")
     link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
     crossorigin="anonymous")
-    link(rel="stylesheet" href="css/style.css" type="text/css")
+    link(rel="stylesheet" href="public/stylesheets/style.css" type="text/css")
+    script(defer, src="public/javascripts/bundle.js")
 
   body(class="back").container
     i(class="fas fa-qrcode fa-3x").my-5  QRコードに変換するURLを入力してください。
-    form(action="/qrcode_changer", method="post")
-      div.form-group
-        textarea(name="input_url", rows="2" placeholder="ここにURLを入力してください").form-control
-      div.form-group
-        button(type="submit").btn.btn-primary 変換する
-    - var isRequested = data ? true : false
-    if isRequested
-      div.form-group
-        h1(class="result").mt-5 ↓生成したQRコード
-      div.form-group
-        img(src=data, alt="qrcode")
-    if isNotUrl
-      i(class="fas fa-exclamation-triangle fa-3x").mt-5 URLではありません。
-    if isError
-      i(class="fas fa-exclamation-triangle fa-3x").mt-5 変換時にエラーが発生しました。
+    
+    div.form-group
+      textarea(id="input_url", name="input_url", rows="2" placeholder="ここにURLを入力してください").form-control
+    div.form-group
+      button(id="submit-button", type="submit").btn.btn-primary 変換する
+
+    div.form-group
+      h1(id="result-msg", class="result", style="display: none").mt-5 ↓生成したQRコード
+      img(id="result-img", src=data, alt="qrcode", style="display: none")
+      i(id="result-noturl", class="fas fa-exclamation-triangle fa-3x", style="display: none").mt-5 URLではありません。
+      i(id="result-error", class="fas fa-exclamation-triangle fa-3x", style="display: none").mt-5 変換時にエラーが発生しました。
 
     script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js",
