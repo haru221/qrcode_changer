@@ -1,0 +1,8 @@
+{
+  "name": "Enquetes",
+  "description": "http to QR code.",
+  "repository": "https://github.com/haru221/qrcode_changer",
+  "logo": "",
+  "keywords": ["node"],
+  "image": "heroku/nodejs"
+}
